@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT NEST - Turn Videos into Viral Content</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>EDIT NEST</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#testimonials">Reviews</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn btn-ghost" id="loginBtn">Log In</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up Free</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-content">
+            <div class="badge">✨ AI-Powered Video Editing</div>
+            <h1>Turn Long Videos Into <br><span class="gradient-text">Viral Shorts</span> in Seconds</h1>
+            <p>Paste a YouTube link or upload your video. Our advanced AI will automatically find the best moments, add
+                engaging captions, and format them perfectly for TikTok, Reels, and Shorts.</p>
+
+            <div class="action-box">
+                <div class="input-group">
+                    <i class="fa-brands fa-youtube"></i>
+                    <input type="text" id="videoUrlInput" placeholder="Paste YouTube link here...">
+                    <button class="btn btn-primary btn-large" id="generateBtn">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Clips
+                    </button>
+                </div>
+                <div class="divider"><span>OR</span></div>
+                <div class="upload-area" id="dropArea">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <p>Drag & drop or <span>browse</span> local video files</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat"><i class="fa-solid fa-bolt"></i> 10x Faster Generation</div>
+                <div class="stat"><i class="fa-solid fa-closed-captioning"></i> 99% Accurate Captions</div>
+                <div class="stat"><i class="fa-solid fa-eye"></i> Maximize Engagement</div>
+            </div>
+        </div>
+
+        <!-- Processing Modal (Hidden by default) -->
+        <div class="processing-overlay" id="processingOverlay">
+            <div class="processing-card">
+                <h3><i class="fa-solid fa-microchip spinner"></i> AI is working its magic...</h3>
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                <p id="processingStatus">Analyzing video content...</p>
+                <div class="processing-steps">
+                    <div class="step active"><i class="fa-solid fa-check"></i> Trimming silent parts</div>
+                    <div class="step active"><i class="fa-solid fa-check"></i> Finding viral moments</div>
+                    <div class="step pending" id="step3"><i class="fa-solid fa-circle-notch fa-spin"></i> Generating
+                        dynamic captions</div>
+                    <div class="step pending" id="step4"><i class="fa-regular fa-circle"></i> Applying gaming overlays
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2>Everything you need to <span class="gradient-text">Go Viral</span></h2>
+            <p>Edit Nest equips you with professional-grade AI tools to dominate short-form platforms.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-scissors"></i></div>
+                <h3>AI-Powered Clipping</h3>
+                <p>Our neural network understands context and emotion to extract the most engaging 15-60 second clips
+                    natively.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-closed-captioning"></i></div>
+                <h3>Dynamic Auto-Captions</h3>
+                <p>Generate highly accurate, bouncing and coloring captions similar to top creators, keeping viewers
+                    hooked.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-gamepad"></i></div>
+                <h3>Split-Screen Overlays</h3>
+                <p>Automatically add trending GTA or Minecraft parkour gameplay to the bottom half to boost retention
+                    rates.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-crop-simple"></i></div>
+                <h3>Smart Face Tracking</h3>
+                <p>Never leave the frame. Our AI tracks the speaker's face and auto-crops landscape videos to vertical
+                    formats seamlessly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-music"></i></div>
+                <h3>Auto-B-Roll & Music</h3>
+                <p>Edit Nest adds relevant B-Roll footage based on context and syncs trendy background music
+                    automatically.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-palette"></i></div>
+                <h3>Brand Kits & Styling</h3>
+                <p>Apply your custom fonts, brand colors, and logos to all generated clips with a single click for
+                    consistency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <h2>How It <span class="gradient-text">Works</span></h2>
+            <p>Three simple steps to build your content empire.</p>
+        </div>
+        <div class="steps-container">
+            <div class="workflow-step">
+                <div class="step-number">1</div>
+                <h3>Provide Content</h3>
+                <p>Paste a YouTube URL from a podcast, interview, or vlog. Alternatively, upload raw video files
+                    straight from your device.</p>
+            </div>
+            <div class="workflow-connector"></div>
+            <div class="workflow-step">
+                <div class="step-number">2</div>
+                <h3>AI Analysis</h3>
+                <p>Our engine scrubs through the audio and video to detect high-retention hooks and interesting
+                    conversational peaks.</p>
+            </div>
+            <div class="workflow-connector"></div>
+            <div class="workflow-step">
+                <div class="step-number">3</div>
+                <h3>Export & Post</h3>
+                <p>Review the generated clips, tweak the captions if necessary, and export them in 4K directly to your
+                    social scheduler.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <h2>Simple, transparent <span class="gradient-text">Pricing</span></h2>
+            <p>Choose the plan that fits your creation volume.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">Free</div>
+                <p>Perfect to test the waters</p>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> 60 minutes upload / month</li>
+                    <li><i class="fa-solid fa-check"></i> Basic Auto-Captions</li>
+                    <li><i class="fa-solid fa-check"></i> 720p Export Resolution</li>
+                    <li class="disabled"><i class="fa-solid fa-xmark"></i> Advanced Face Tracking</li>
+                    <li class="disabled"><i class="fa-solid fa-xmark"></i> No Watermark</li>
+                </ul>
+                <button class="btn btn-ghost w-100">Get Started Free</button>
+            </div>
+            <div class="pricing-card popular">
+                <div class="popular-badge">Most Popular</div>
+                <h3>Creator</h3>
+                <div class="price">$19<span>/mo</span></div>
+                <p>For consistent content output</p>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> 500 minutes upload / month</li>
+                    <li><i class="fa-solid fa-check"></i> Viral Auto-Captions</li>
+                    <li><i class="fa-solid fa-check"></i> Smart Face Tracking</li>
+                    <li><i class="fa-solid fa-check"></i> No Watermark</li>
+                    <li><i class="fa-solid fa-check"></i> 1080p Export Resolution</li>
+                </ul>
+                <button class="btn btn-primary w-100">Upgrade to Creator</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Agency</h3>
+                <div class="price">$49<span>/mo</span></div>
+                <p>For high-volume production</p>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Unlimited minutes upload</li>
+                    <li><i class="fa-solid fa-check"></i> Custom Brand Kits</li>
+                    <li><i class="fa-solid fa-check"></i> Priority API Access</li>
+                    <li><i class="fa-solid fa-check"></i> 4K Export Resolution</li>
+                    <li><i class="fa-solid fa-check"></i> Dedicated Account Manager</li>
+                </ul>
+                <button class="btn btn-ghost w-100">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>EDIT NEST</span>
+                </div>
+                <p>Transforming the way creators produce short-form content. Build your audience 10x faster using the
+                    power of AI.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Product</h4>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Showcase</a>
+                    <a href="#">API</a>
+                </div>
+                <div class="link-group">
+                    <h4>Resources</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Community</a>
+                    <a href="#">Creator Program</a>
+                </div>
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EDIT NEST. Designed for maximum virality.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
